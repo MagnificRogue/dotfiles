@@ -1,0 +1,18 @@
+[user]
+	name = Dustyn Tubbs
+	email = DustynTubbs@Gmail.com
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+[alias]
+	st = status
+	repo = for-each-ref --count=15 --sort=-committerdate  --format='%(HEAD)%(color:red)%(objectname:short)%(color:reset) %(align:20,middle)(%(color:green)%(committerdate:relative)%(color:reset))%(end) %(align:left,50)[%(color:yellow)%(refname:short)%(color:reset)]%(end)%(color:blue)%(authorname)%(color:reset):\t%(contents:subject)'
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	changes = !sh -c 'git diff HEAD~$1 HEAD' -
+
+
+[core]
+	excludesfile = /Users/dustyn/.gitignore_global
